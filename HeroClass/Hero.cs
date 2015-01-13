@@ -17,18 +17,18 @@ namespace HeroClass
         //Constructor Method
         public Hero(string name)
         {
-            this.name = name;
+            this.name = name;//public property (name) = equals the user input in the argument (string name)
             generateAbilities();//call generateAbilities Method within Constructor Method
         }
+        //Randomely generates ability scores
         private void generateAbilities()
         {
             Random points= new Random();
-            strength = points.Next(1, 100);
-            speed = points.Next(1, 100);
-            health = points.Next(1, 100);
-
-            Console.WriteLine("stats: health:{0}, strength:{1}, speed:{2}", health, strength, speed);
-         }
+            this.strength = points.Next(1, 100);
+            this.speed = points.Next(1, 100);
+            this.health = points.Next(1, 100);
+        }
+        //Fight Method - intiates combat: hits, misses, and calculating damage 
         public void fight() //fight Method calls hitAttempt
         {
             bool hit;
@@ -44,7 +44,7 @@ namespace HeroClass
                 Console.WriteLine("{0} misses!", this.name);
             }
         }
-
+        //hitAttempt Method - player hits 20% of the time
         private bool hitAttempt()
         {
             bool hit = false;
@@ -61,12 +61,23 @@ namespace HeroClass
             }
             return hit;
         }
+        //hitDamage Method - calculate damage by strenght and multiplier (random: 1 to 6)
         private int hitDamage()
         {
             int damage = 0;
             Random bonus = new Random();
             damage = this.strength * (bonus.Next(1, 6));
             return damage;
+        }
+        //displays stats
+        public void show()
+        {
+            Console.WriteLine("{0}'s Ability Scores", this.name);
+            Console.WriteLine("____________________");
+            Console.WriteLine("Health: {0}", this.health);
+            Console.WriteLine("Strength: {0}", this.strength);
+            Console.WriteLine("Speed: {0}", this.speed);
+            Console.WriteLine("____________________");
         }
     }
 
