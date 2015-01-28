@@ -10,6 +10,8 @@ namespace HeroClass
     {
         static void Main(string[] args)
         {
+            string name = Console.ReadLine();
+            Hero newHero (name) = //how to test class?
         }
     }
 }
