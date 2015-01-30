@@ -10,8 +10,18 @@ namespace HeroClass
     {
         static void Main(string[] args)
         {
-            string name = Console.ReadLine();
-            Hero newHero (name) = //how to test class?
+            //Test Loop
+            //for (int i = 0; i < 100;i++ )
+            //{
+                Console.Write("What...is your name: ");
+                string name = Console.ReadLine();
+
+                Hero Destiny = new Hero(name);
+                Destiny.fight();
+
+                Console.WriteLine("Press any key to exit.");
+                Console.ReadKey();
+            //}
         }
     }
 }
