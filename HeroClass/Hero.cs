@@ -73,11 +73,11 @@ namespace HeroClass
         public void show()
         {
             Console.WriteLine("{0}'s Ability Scores", this.name);
-            Console.WriteLine("____________________");
+            Console.WriteLine("___________________________");
             Console.WriteLine("Health: {0}", this.health);
             Console.WriteLine("Strength: {0}", this.strength);
             Console.WriteLine("Speed: {0}", this.speed);
-            Console.WriteLine("____________________");
+            
         }
     }
 
